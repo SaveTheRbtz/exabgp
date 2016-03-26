@@ -25,12 +25,14 @@ class IPSelf (object):
 	def top (self, negotiated, afi=AFI.undefined):
 		return negotiated.nexthopself(afi).top()
 
-	def ton (self,negotiated, afi=AFI.undefined):
+	def ton (self, negotiated, afi=AFI.undefined):
 		return negotiated.nexthopself(afi).ton()
 
 	def pack (self, negotiated):
 		return negotiated.nexthopself(self.afi).ton()
 
+        def index (self):
+		return 'self'
 
 class IP (object):
 	afi = None  # here for the API
